@@ -1,59 +1,70 @@
-# Manual-testing-homework
-Homework and exercises from course in Manual testing 
-Task Board Test Management and Issue Tracker
+Task Board Test Management and Issue Tracker - Test Execution Summary
 Overview
 
-This repository contains the documentation and artifacts for the "Task Board" exercise. The exercise focuses on test management and issue tracking for a Task Board application. You will work with two versions of the application:
-
-    Task Board v.01: The initial version, which you will fork and test.
-    Task Board v.02: The updated version after developer bug fixes, which you will re-test.
-
-Your goals are to create comprehensive test cases in TestRail based on the provided SRS (Software Requirements Specification) for the Task Board application and to log any bugs you find in Jira.
-Applications Under Test
+This repository documents the results of our testing for the Task Board application. We tested two versions of the application (v.01 and v.02) to validate functionality, manage test cases, and track issues. Test cases were executed using TestRail, and any defects were logged in Jira.
+Test Execution Summary
 Task Board v.01
 
-    URL: Task Board v.01
-    Overview: Fork this version into your own Replit profile and use it to develop your test cases.
-    Testing Tasks:
-        Review the SRS document (provided separately).
-        Create test cases in TestRail covering all functionalities of the application.
-        Log any bugs found during testing in Jira.
+Application URL: Task Board v.01
 
+In Task Board v.01, we performed extensive tests based on the SRS requirements. The focus was on verifying core functionalities and identifying bugs.
+Key Test Areas:
+
+    Authentication:
+        Registration: Verified that users can register with valid data (unique email, password matching, etc.), and confirmed that redirection to the Home page occurs with the Logout button visible.
+        Login & Logout: Ensured that login works correctly and that the Logout function returns the user to the Home page.
+
+    Navigation:
+        For logged-in users, navigation was checked to confirm that "Home," "Collection," "Search," "Create Book," and "Logout" were visible.
+        For guests, only "Home," "Collection," "Search," "Login," and "Register" were displayed.
+
+    CRUD Functionality:
+        Book Creation: A book with a randomly generated title was created, ensuring uniqueness. All required fields (title, cover image, year, author, genre, and description) were filled and submitted.
+        Book Editing and Deletion: The book was later edited and then deleted. Each operation was verified by checking the updated interface and URL.
+
+Issues Identified:
+
+Several defects were logged in Jira. Key issues included:
+
+    Inconsistent form validation on the registration page.
+    Navigation glitches under certain conditions.
+    Minor discrepancies in CRUD operations.
+
+Detailed bug reports—with reproduction steps, screenshots, and environment details—were submitted in Jira.
 Task Board v.02
 
-    URL: Task Board v.02
-    Overview: This is the updated version after bug fixes. Fork it into your own Replit profile.
-    Testing Tasks:
-        Re-run your test cases to verify that bugs have been fixed.
-        Perform regression testing to ensure no new issues have been introduced.
-        Log any remaining or new issues in Jira if necessary.
+Application URL: Task Board v.02
 
-Instructions
+After the development team addressed the reported issues, Task Board v.02 was tested to ensure all fixes were effective.
+Key Test Areas:
 
-    Fork the Applications:
-        Fork Task Board v.01 and Task Board v.02 into your own Replit account.
+    Regression Testing:
+        All functionalities previously tested in v.01 were re-executed.
+        Confirmed that critical issues had been resolved and that no new defects were introduced.
+    Extended Functionality:
+        Further tests were performed on navigation, authentication, and CRUD operations to ensure complete compliance with the SRS.
 
-    Review the SRS Document:
-        Study the Software Requirements Specification provided for the Task Board application to understand all the required functionalities.
+Outcomes:
 
-    Test Case Development:
-        Using TestRail, create detailed test cases for each functionality described in the SRS.
-        Include clear test steps, expected outcomes, and any preconditions.
+    All major issues reported in Task Board v.01 were resolved.
+    The application now meets the specified requirements.
+    Minor issues observed did not affect the core functionality and were documented.
 
-    Bug Reporting:
-        As you test Task Board v.01, log any bugs you find in Jira.
-        Ensure your bug reports include steps to reproduce, expected vs. actual results, screenshots (if applicable), and environment details.
+Test Artifacts
 
-    Re-Testing & Regression:
-        After bug fixes are deployed in Task Board v.02, re-run your tests.
-        Confirm that all previously reported bugs have been resolved.
-        Perform regression testing to ensure that fixes have not introduced new issues.
+    TestRail:
+    Detailed test cases and suites were created in TestRail covering authentication, navigation, and CRUD functionalities. These test cases include step-by-step procedures and expected outcomes.
 
-Tools & Resources
+    Jira:
+    Bug reports for Task Board v.01 are available in Jira. Below is a summary:
+        Bug #1: Registration form validation inconsistency – Resolved
+        Bug #2: Navigation button display issues for logged-in users – Resolved
+        Bug #3: CRUD operation glitches during book edit/delete – Resolved
+        Additional issues were logged and reviewed as part of the regression process.
 
-    Replit: Fork and run the Task Board applications.
-    TestRail: Document and manage your test cases.
-    Jira: Log and track bug reports.
-    SRS Document: Provided separately, outlines the required functionalities for the Task Board application.
+Conclusion
 
+The testing process for the Task Board application was completed in two phases:
 
+    Initial Testing (v.01): Identified and logged key issues.
+    Re-Testing (v.02): Verified that bug fixes were effective and confirmed that the application meets the SRS requirements.
